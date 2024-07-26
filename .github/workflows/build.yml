@@ -18,11 +18,11 @@ jobs:
         
     - name: Application build Stage
       run: |
-           mvn -e -X clean install
+           mvn clean install
 
     - name: Code Coverage Stage
       run: |
-           mvn clean verify sonar:sonar \
+           mvn -e -X clean verify sonar:sonar \
              -Dsonar.projectKey=sander \
              -Dsonar.projectName='sander' \
              -Dsonar.host.url=http://hivemet.com:9000 \
